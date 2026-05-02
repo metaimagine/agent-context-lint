@@ -1,16 +1,21 @@
 # agent-context-lint
 
+[![CI](https://github.com/metaimagine/agent-context-lint/actions/workflows/ci.yml/badge.svg)](https://github.com/metaimagine/agent-context-lint/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/metaimagine/agent-context-lint?display_name=tag)](https://github.com/metaimagine/agent-context-lint/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/metaimagine/agent-context-lint/blob/main/LICENSE)
+
 `agent-context-lint` is a small Python CLI for checking the instruction files that AI coding agents read before they act. It helps teams catch risky or stale guidance in `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, Cursor rules, and GitHub Copilot instructions before those files waste context or steer agents into bad changes.
 
 The positioning is intentionally narrow: this is a preflight linter for agent context, not a general Markdown checker or policy engine.
 
+![agent-context-lint terminal demo](docs/assets/terminal-demo.svg)
+
 ## Quickstart
 
 ```bash
-cd projects/agent-context-lint
-python3 -m venv .venv
-. .venv/bin/activate
-python -m pip install -e .
+git clone https://github.com/metaimagine/agent-context-lint.git
+cd agent-context-lint
+python3 -m pip install -e .
 agent-context-lint scan .
 agent-context-lint scan . --format json
 ```
@@ -67,3 +72,7 @@ This MVP focuses on fast, local, explainable checks. It does not call external A
 ## Distribution Positioning
 
 Agent instruction files are becoming part of every serious AI-assisted repository, but most repos treat them as unchecked prose. `agent-context-lint` gives maintainers a lightweight quality gate they can run before merging agent instructions, publishing templates, or onboarding another coding assistant.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for local setup, focused test commands, and contribution rules.
