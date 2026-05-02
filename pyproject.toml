@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-context-lint"
+version = "0.1.0"
+description = "Lint AI-agent instruction files before they drift, leak, or mislead."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [
+  {name = "metaimagine"}
+]
+keywords = ["ai-agents", "lint", "codex", "claude", "copilot", "cursor"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Software Development :: Quality Assurance",
+]
+dependencies = []
+
+[project.scripts]
+agent-context-lint = "agent_context_lint.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
